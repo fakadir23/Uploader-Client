@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38CAF6C0-0FFA-42FB-BDB5-F5637A1B8B03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ISTL.MODELS</RootNamespace>
+    <AssemblyName>ISTL.MODELS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ApiResponse.cs" />
+    <Compile Include="Common\BaseRequestModel.cs" />
+    <Compile Include="DTO\Auth\LookupVersionDto.cs" />
+    <Compile Include="DTO\Auth\PermissionDto.cs" />
+    <Compile Include="DTO\Beneficiary\BeneficiarySummaryDto.cs" />
+    <Compile Include="DTO\Common\CodeNameDto.cs" />
+    <Compile Include="DTO\Device\DeviceDto.cs" />
+    <Compile Include="DTO\Enrollment\PersonBiometricDto.cs" />
+    <Compile Include="DTO\Enrollment\PersonDataDto.cs" />
+    <Compile Include="DTO\Enrollment\PersonEnrollmentDto.cs" />
+    <Compile Include="DTO\Fingerprint\FingerprintData.cs" />
+    <Compile Include="DTO\Iris\IrisData.cs" />
+    <Compile Include="DTO\Lookup\LookupDto.cs" />
+    <Compile Include="DTO\New\DateTimeInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Adjudication\MatchResultDto.cs" />
+    <Compile Include="DTO\New\Enrollment\BECverify\BECvoterInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\BECverify\FingerUploadUrlDto.cs" />
+    <Compile Include="DTO\New\Enrollment\BECverify\BECAddressDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\FingerprintResponseDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\IrisResponseDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\RecoveryEntryDto.cs" />
+    <Compile Include="DTO\New\Enrollment\EnrollmentDto.cs" />
+    <Compile Include="DTO\New\Enrollment\HashStatus.cs" />
+    <Compile Include="DTO\New\Lookup\CrimeTypeDto.cs" />
+    <Compile Include="DTO\New\NotEntry\NotEntryDto.cs" />
+    <Compile Include="DTO\New\Enrollment\OtherInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\ArrestInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\AttachmentDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\BankAccountDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\BiometricDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\FingerprintDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\IrisDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Biometric\PhotoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\ComplainDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\ActivityDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\CaseDetailDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\CrimeHistoryDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\CrimeInformationDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\CrimeZoneDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\IllegalArmsPossessionDto.cs" />
+    <Compile Include="DTO\New\Enrollment\CrimeInformation\RemandInformationDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\EducationInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\FamilyDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\FIRDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\ForeignAddressDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\HeightDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\NationalityProfileDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\AddressDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\PoliticalIdentityDto.cs" />
+    <Compile Include="DTO\New\Enrollment\ProfileDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\PropertiesInfoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\SeizureDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Other\WeightDto.cs" />
+    <Compile Include="DTO\New\Enrollment\ProfileResponseDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Special\SpecialAddressDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Special\SpecialArrestTypeCountDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Special\SpecialCrimeZoneDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Special\SpecialEnrollmentDto.cs" />
+    <Compile Include="DTO\New\Enrollment\Special\SpecialEnrollPhotoDto.cs" />
+    <Compile Include="DTO\New\Enrollment\WarrantDto.cs" />
+    <Compile Include="DTO\New\JailDBBioMatch\JailProfileDto.cs" />
+    <Compile Include="DTO\New\Lookup\DistrictDto.cs" />
+    <Compile Include="DTO\New\Lookup\DivisionDto.cs" />
+    <Compile Include="DTO\New\Lookup\NationalityDto.cs" />
+    <Compile Include="DTO\New\Lookup\RabDistrictDto.cs" />
+    <Compile Include="DTO\New\Lookup\RabGeoMapDto.cs" />
+    <Compile Include="DTO\New\Lookup\RabUpazilaDto.cs" />
+    <Compile Include="DTO\New\Lookup\RecoveryDto.cs" />
+    <Compile Include="DTO\New\Lookup\StationDto.cs" />
+    <Compile Include="DTO\New\Lookup\SubStationDto.cs" />
+    <Compile Include="DTO\New\Lookup\UnionDto.cs" />
+    <Compile Include="DTO\New\Lookup\UpazilaDto.cs" />
+    <Compile Include="DTO\New\NotEntry\ReasonCountDto.cs" />
+    <Compile Include="DTO\Privilege\AssignFunctionToRoleDto.cs" />
+    <Compile Include="DTO\Privilege\AssignRoleToUserDto.cs" />
+    <Compile Include="DTO\Privilege\FunctionDto.cs" />
+    <Compile Include="DTO\Privilege\RoleDto.cs" />
+    <Compile Include="DTO\ProfileManagement\Enrollment\ProfileFingerprintDto.cs" />
+    <Compile Include="DTO\ProfileManagement\Enrollment\ProfileIrisDto.cs" />
+    <Compile Include="DTO\ProfileManagement\Enrollment\ProfilePhotoDto.cs" />
+    <Compile Include="DTO\ProfileManagement\ProfileManagementFingerprintResponseDto.cs" />
+    <Compile Include="DTO\Report\CriminalProfileOrCombinedReportDto.cs" />
+    <Compile Include="DTO\Report\ReportResult.cs" />
+    <Compile Include="DTO\Search\DemographicSearchDto.cs" />
+    <Compile Include="DTO\Search\ProfileSearchSummaryRequest.cs" />
+    <Compile Include="DTO\Search\SearchCriminalDto.cs" />
+    <Compile Include="DTO\User\PermissionDto.cs" />
+    <Compile Include="DTO\Webcam\WebcamData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\Adjudication\AdjudicateRequest.cs" />
+    <Compile Include="Request\Adjudication\AdjUpdateMatchStatusRequest.cs" />
+    <Compile Include="Request\Adjudication\GetMatchListRequest.cs" />
+    <Compile Include="Request\Beneficiary\Address.cs" />
+    <Compile Include="Request\Beneficiary\Alternate\AlternateDto.cs" />
+    <Compile Include="Request\Beneficiary\Alternate\DocumentType.cs" />
+    <Compile Include="Request\Beneficiary\Alternate\Gender.cs" />
+    <Compile Include="Request\Beneficiary\Alternate\RelationshipWithHouseholdHead.cs" />
+    <Compile Include="Request\Beneficiary\BatchRegisterBeneficiaryRequest.cs" />
+    <Compile Include="Request\Beneficiary\Biometric\Biometrics.cs" />
+    <Compile Include="Request\Beneficiary\Biometric\BiometricType.cs" />
+    <Compile Include="Request\Beneficiary\Biometric\BiometricUserType.cs" />
+    <Compile Include="Request\Beneficiary\Biometric\NoFingerprintReason.cs" />
+    <Compile Include="Request\Beneficiary\Enums\Currency.cs" />
+    <Compile Include="Request\Beneficiary\Enums\HouseholdIncomeSource.cs" />
+    <Compile Include="Request\Beneficiary\Enums\LegalStatus.cs" />
+    <Compile Include="Request\Beneficiary\Enums\MaritalStatus.cs" />
+    <Compile Include="Request\Beneficiary\Enums\NotPerticipationReason.cs" />
+    <Compile Include="Request\Beneficiary\Enums\Occupation.cs" />
+    <Compile Include="Request\Beneficiary\Enums\SelectionCriteria.cs" />
+    <Compile Include="Request\Beneficiary\Enums\SelectionReason.cs" />
+    <Compile Include="Request\Beneficiary\HouseholdInfo.cs" />
+    <Compile Include="Request\Beneficiary\LocationDto.cs" />
+    <Compile Include="Request\Beneficiary\NomineeDto.cs" />
+    <Compile Include="Request\Beneficiary\RegisterBeneficiaryRequest.cs" />
+    <Compile Include="Request\EnrollmentListSearchRequest.cs" />
+    <Compile Include="Request\LoginRequestModel.cs" />
+    <Compile Include="Request\New\DashboardSummaryRequest.cs" />
+    <Compile Include="Request\New\Enrollment\GetSpecialProfileRequest.cs" />
+    <Compile Include="Request\New\Enrollment\HashVerifyRequest.cs" />
+    <Compile Include="Request\New\Enrollment\NotVerifiedHashRequest.cs" />
+    <Compile Include="Request\New\GetBECidentifyRequest.cs" />
+    <Compile Include="Request\New\GetBECverifyRequest.cs" />
+    <Compile Include="Request\New\GetProfileDataByteRequest.cs" />
+    <Compile Include="Request\New\GetRecoveryRequest.cs" />
+    <Compile Include="Request\New\GetSpecialArrestTypeCountRequest.cs" />
+    <Compile Include="Request\New\Report\DailyEnrollReportRequest.cs" />
+    <Compile Include="Request\New\Report\ReportDeleteRequest.cs" />
+    <Compile Include="Request\New\Report\SpecialCriminalReportRequest.cs" />
+    <Compile Include="Request\New\Report\SummaryReportRequest.cs" />
+    <Compile Include="Request\NotEntry\NotEntrySearchRequest.cs" />
+    <Compile Include="Request\ProfileManagement\ProfileManagementEnrollmentRequest.cs" />
+    <Compile Include="Request\Report\CriminalReportRequest.cs" />
+    <Compile Include="Request\Report\ReportRequest.cs" />
+    <Compile Include="Request\Report\ReportResultRequest.cs" />
+    <Compile Include="Request\User\AddUserRequest.cs" />
+    <Compile Include="Request\User\UserActivationRequest.cs" />
+    <Compile Include="Request\User\UserSearchCriteriaRequest.cs" />
+    <Compile Include="Request\WorkStation\WorkStationAliveRequest.cs" />
+    <Compile Include="Response\Beneficiary\BatchRegisterBeneficiaryResponse.cs" />
+    <Compile Include="Response\New\DashboardSummaryResponse.cs" />
+    <Compile Include="Response\New\Enrollment\HashVerifiedResponse.cs" />
+    <Compile Include="Response\New\Enrollment\NotVerifiedHashResponse.cs" />
+    <Compile Include="Response\New\Enrollment\ProfileSearchListResponse.cs" />
+    <Compile Include="Response\New\GetBECdataResponse.cs" />
+    <Compile Include="Response\New\GetBECidentifyResponse.cs" />
+    <Compile Include="Response\New\GetBECverifyResponse.cs" />
+    <Compile Include="Response\New\GetProfileDataByteResponse.cs" />
+    <Compile Include="Response\New\HashCheckResponse.cs" />
+    <Compile Include="Response\New\JailDBBioMatch\JailBiometricMatchProfileResponse.cs" />
+    <Compile Include="Response\New\Lookup\GetGeoMapListResponse.cs" />
+    <Compile Include="Response\New\Lookup\GetRabDistrictResponse.cs" />
+    <Compile Include="Response\New\Lookup\GetRabUpazilaResponse.cs" />
+    <Compile Include="Response\New\Lookup\GetRecoveryResponse.cs" />
+    <Compile Include="Response\New\ServiceResponse.cs" />
+    <Compile Include="Response\New\ProfileSearchSummaryResponse.cs" />
+    <Compile Include="Response\New\Special\GetSpecialArrestTypeCountResponse.cs" />
+    <Compile Include="Response\New\Special\GetSpecialProfileResponse.cs" />
+    <Compile Include="Response\NotEntry\NotEntrySearchResponse.cs" />
+    <Compile Include="Response\Old\Adjudication\AdjudicateResponse.cs" />
+    <Compile Include="Response\Old\Adjudication\AdjUpdateMatchStatusResponse.cs" />
+    <Compile Include="Response\Old\Adjudication\GetMatchListIdsResponse.cs" />
+    <Compile Include="Response\Old\Adjudication\GetMatchListResponse.cs" />
+    <Compile Include="Response\Old\EnrollmentAddResponse.cs" />
+    <Compile Include="Response\Old\EnrollmentListSearchResponse.cs" />
+    <Compile Include="Response\Old\EnrollResponse.cs" />
+    <Compile Include="Response\Old\GetEnrollmentDetailsResponse.cs" />
+    <Compile Include="Response\LoginResponse.cs" />
+    <Compile Include="Response\Old\ServiceResponse.cs" />
+    <Compile Include="Response\ProfileManagement\ProfileManagementEnrollmentResponse.cs" />
+    <Compile Include="Response\ProfileManagement\ProfileManagementSearchResponse.cs" />
+    <Compile Include="Response\Report\CriminalProfileOrCombinedReportResponse.cs" />
+    <Compile Include="Response\Report\ReportResponse.cs" />
+    <Compile Include="Response\Report\ReportResultResponse.cs" />
+    <Compile Include="Response\UserStatus.cs" />
+    <Compile Include="Response\User\UserSearchResponse.cs" />
+    <Compile Include="Response\WorkStation\WorkStationAliveResponse.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

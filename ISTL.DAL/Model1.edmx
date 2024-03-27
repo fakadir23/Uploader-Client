@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="istldbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="lookup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="personenrollment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstNameEn" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleNameEn" Type="varchar" MaxLength="50" />
+          <Property Name="LastNameEn" Type="varchar" MaxLength="50" />
+          <Property Name="FirstNameLocal" Type="varchar" MaxLength="100" />
+          <Property Name="MiddleNameLocal" Type="varchar" MaxLength="100" />
+          <Property Name="LastNameLocal" Type="varchar" MaxLength="100" />
+          <Property Name="PlaceOfBirth" Type="tinyint" />
+          <Property Name="NationalityId" Type="tinyint" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Gender" Type="tinyint" />
+          <Property Name="MotherName" Type="varchar" MaxLength="100" />
+          <Property Name="FatherName" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseName" Type="varchar" MaxLength="100" />
+          <Property Name="MaritalStatus" Type="tinyint" />
+          <Property Name="Occupation" Type="tinyint" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="20" />
+          <Property Name="PermanentDivisionId" Type="tinyint" />
+          <Property Name="PermanentDistrictId" Type="tinyint" />
+          <Property Name="PermanentStationId" Type="smallint" />
+          <Property Name="PermanentUpazilaId" Type="smallint" />
+          <Property Name="PermanentUnionId" Type="mediumint" />
+          <Property Name="PermanentPostCode" Type="smallint" />
+          <Property Name="PermanentAddress" Type="text" />
+          <Property Name="PresentDivisionId" Type="tinyint" />
+          <Property Name="PresentDistrictId" Type="tinyint" />
+          <Property Name="PresentStationId" Type="smallint" />
+          <Property Name="PresentPostCode" Type="smallint" />
+          <Property Name="PresentAddress" Type="text" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+          <Property Name="ApplicationStatus" Type="tinyint" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="10" />
+          <Property Name="CategoriesId" Type="varchar" MaxLength="255" />
+          <Property Name="OrganizationId" Type="varchar" MaxLength="255" />
+          <Property Name="Designation" Type="varchar" MaxLength="255" />
+          <Property Name="Remarks" Type="text" />
+          <Property Name="Photo" Type="longblob" />
+          <Property Name="PhotoUrl" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="istldbModelStoreContainer">
+          <EntitySet Name="lookup" EntityType="Self.lookup" Schema="istldb" store:Type="Tables" />
+          <EntitySet Name="personenrollment" EntityType="Self.personenrollment" Schema="istldb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="istldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="lookup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="SByte" />
+        </EntityType>
+        <EntityType Name="personenrollment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstNameLocal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleNameLocal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastNameLocal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PlaceOfBirth" Type="SByte" />
+          <Property Name="NationalityId" Type="SByte" />
+          <Property Name="DateOfBirth" Type="DateTime" />
+          <Property Name="Gender" Type="SByte" />
+          <Property Name="MotherName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MaritalStatus" Type="SByte" />
+          <Property Name="Occupation" Type="SByte" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PermanentDivisionId" Type="SByte" />
+          <Property Name="PermanentDistrictId" Type="SByte" />
+          <Property Name="PermanentStationId" Type="Int16" />
+          <Property Name="PermanentUpazilaId" Type="Int16" />
+          <Property Name="PermanentUnionId" Type="Int32" />
+          <Property Name="PermanentPostCode" Type="Int16" />
+          <Property Name="PermanentAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="PresentDivisionId" Type="SByte" />
+          <Property Name="PresentDistrictId" Type="SByte" />
+          <Property Name="PresentStationId" Type="Int16" />
+          <Property Name="PresentPostCode" Type="Int16" />
+          <Property Name="PresentAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicationStatus" Type="SByte" />
+          <Property Name="BloodGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CategoriesId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="istldbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="lookups" EntityType="Self.lookup" />
+          <EntitySet Name="personenrollments" EntityType="Self.personenrollment" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="istldbModelStoreContainer" CdmEntityContainer="istldbEntities">
+          <EntitySetMapping Name="lookups">
+            <EntityTypeMapping TypeName="istldbModel.lookup">
+              <MappingFragment StoreEntitySet="lookup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personenrollments">
+            <EntityTypeMapping TypeName="istldbModel.personenrollment">
+              <MappingFragment StoreEntitySet="personenrollment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstNameEn" ColumnName="FirstNameEn" />
+                <ScalarProperty Name="MiddleNameEn" ColumnName="MiddleNameEn" />
+                <ScalarProperty Name="LastNameEn" ColumnName="LastNameEn" />
+                <ScalarProperty Name="FirstNameLocal" ColumnName="FirstNameLocal" />
+                <ScalarProperty Name="MiddleNameLocal" ColumnName="MiddleNameLocal" />
+                <ScalarProperty Name="LastNameLocal" ColumnName="LastNameLocal" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="NationalityId" ColumnName="NationalityId" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PermanentDivisionId" ColumnName="PermanentDivisionId" />
+                <ScalarProperty Name="PermanentDistrictId" ColumnName="PermanentDistrictId" />
+                <ScalarProperty Name="PermanentStationId" ColumnName="PermanentStationId" />
+                <ScalarProperty Name="PermanentUpazilaId" ColumnName="PermanentUpazilaId" />
+                <ScalarProperty Name="PermanentUnionId" ColumnName="PermanentUnionId" />
+                <ScalarProperty Name="PermanentPostCode" ColumnName="PermanentPostCode" />
+                <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+                <ScalarProperty Name="PresentDivisionId" ColumnName="PresentDivisionId" />
+                <ScalarProperty Name="PresentDistrictId" ColumnName="PresentDistrictId" />
+                <ScalarProperty Name="PresentStationId" ColumnName="PresentStationId" />
+                <ScalarProperty Name="PresentPostCode" ColumnName="PresentPostCode" />
+                <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="CategoriesId" ColumnName="CategoriesId" />
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

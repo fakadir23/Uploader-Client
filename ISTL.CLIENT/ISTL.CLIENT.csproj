@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF4461BB-F7C2-4B0B-91E8-E97D1C41CD8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ISTL.RAB</RootNamespace>
+    <AssemblyName>SNSOP-TOOLS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SNSOP_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ftrSDKHelper13, Version=4.2.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ISTL.FP\ftrSDKHelper13.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IriMagic4Net, Version=3.2.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ISTL.IRIS\IriMagic4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\ISTL.COMMON\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\ISTL.COMMON\lib\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.2.0\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ISTL.COMMON\lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Primitives, Version=4.8.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.8.1\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Wsqm">
+      <HintPath>..\ISTL.FP\Wsqm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiManager\BECApiManager.cs" />
+    <Compile Include="ApiManager\BeneficiaryApiManager.cs" />
+    <Compile Include="ApiManager\BiometricMatchApiManager.cs" />
+    <Compile Include="ApiManager\DashboardApiManager.cs" />
+    <Compile Include="ApiManager\EnrollmentApiManager.cs" />
+    <Compile Include="ApiManager\LoginApiManager.cs" />
+    <Compile Include="ApiManager\LookupApiManager.cs" />
+    <Compile Include="ApiManager\NotEntryApiManager.cs" />
+    <Compile Include="ApiManager\ProfileManagementApiManager.cs" />
+    <Compile Include="ApiManager\ReportApiManager.cs" />
+    <Compile Include="ApiManager\SpecialEnrollApiManager.cs" />
+    <Compile Include="ApiManager\UserApiManager.cs" />
+    <Compile Include="ApiManager\WorkStationApiManager.cs" />
+    <Compile Include="Asynch\BecNidIdentificationAsynch.cs" />
+    <Compile Include="Asynch\SendHeartbeatAsynch.cs" />
+    <Compile Include="Asynch\UpdateCheckAsynch.cs" />
+    <Compile Include="Asynch\UploadEnrollmentAsynch.cs" />
+    <Compile Include="Asynch\UploadSpecialEnrollAsync.cs" />
+    <Compile Include="Asynch\UploadThreadsAsync.cs" />
+    <Compile Include="Asynch\VerifyEnroll.cs" />
+    <Compile Include="Controllers\ExportDbController.cs" />
+    <Compile Include="Controllers\ImportDbController.cs" />
+    <Compile Include="Controllers\New\Enrollment\BiometricController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\NotEntryBiometricController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\NotEntryController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\NotEntryFailedUploadController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\NotEntrySubmitPreviewController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\NotEntryUploadPendingController.cs" />
+    <Compile Include="Controllers\New\Enrollment\NotEntry\SearchNotEntryProfileController.cs" />
+    <Compile Include="Controllers\New\Enrollment\PreviewSubmitController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialDraftProfileController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialEnrollCountController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialEnrollmentController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialFailedUploadController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialSearchProfileController.cs" />
+    <Compile Include="Controllers\New\Enrollment\Special\SpecialUploadPendingController.cs" />
+    <Compile Include="Controllers\New\Home\BiometricSearchController.cs" />
+    <Compile Include="Controllers\New\Enrollment\CriminalProfileController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\New\Home\DiagnoseController.cs" />
+    <Compile Include="Controllers\New\Enrollment\OtherInformationController.cs" />
+    <Compile Include="Controllers\New\Home\DraftDataController.cs" />
+    <Compile Include="Controllers\New\Home\EnrolledTodayController.cs" />
+    <Compile Include="Controllers\New\Home\FailedUploadController.cs" />
+    <Compile Include="Controllers\New\Home\MatchResultController.cs" />
+    <Compile Include="Controllers\New\Home\Report\DailyEnrollmentReportController.cs" />
+    <Compile Include="Controllers\New\Home\Report\ReportController.cs" />
+    <Compile Include="Controllers\New\Home\Report\SummaryReportController.cs" />
+    <Compile Include="Controllers\New\Home\Setup\BattalionSettingsController.cs" />
+    <Compile Include="Controllers\New\Home\Setup\ServiceSettingsController.cs" />
+    <Compile Include="Controllers\New\Home\UploadPendingListController.cs" />
+    <Compile Include="Controllers\New\Home\UserManagementController.cs" />
+    <Compile Include="Controllers\New\ProfileManagement\ProfileManagementController.cs" />
+    <Compile Include="Controllers\Old\MatchController.cs" />
+    <Compile Include="Controllers\EnrollController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\Old\ManageController.cs" />
+    <Compile Include="Controllers\MessageBoxController.cs" />
+    <Compile Include="Controllers\Old\PersonMatchResultController.cs" />
+    <Compile Include="Controllers\New\Home\SearchCriminalController.cs" />
+    <Compile Include="CustomFpEngine.cs" />
+    <Compile Include="DbManager\DbBecManager.cs" />
+    <Compile Include="DbManager\DbDeviceManager.cs" />
+    <Compile Include="DbManager\DbEnrollClientManager.cs" />
+    <Compile Include="DbManager\DbExistingDataManager.cs" />
+    <Compile Include="DbManager\DbExistingSpecialProfileManager.cs" />
+    <Compile Include="DbManager\DbLookupManager.cs" />
+    <Compile Include="DbManager\DbNotEntryManager.cs" />
+    <Compile Include="DbManager\DbReportManager.cs" />
+    <Compile Include="DbManager\DbSpecialEnrollManager.cs" />
+    <Compile Include="DbManager\DbTransfer.cs" />
+    <Compile Include="DbManager\DbUserManager.cs" />
+    <Compile Include="Controllers\New\Lookup\ComboBoxItems.cs" />
+    <Compile Include="Entity\Configuration.cs" />
+    <Compile Include="Entity\Devices.cs" />
+    <Compile Include="Entity\Language.cs" />
+    <Compile Include="Controllers\New\Lookup\LookupItems.cs" />
+    <Compile Include="Entity\SelectedEntity.cs" />
+    <Compile Include="Entity\StaticData.cs" />
+    <Compile Include="Entity\Users.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Exceptions\ExceptionHandler.cs" />
+    <Compile Include="Globals.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="InstallerClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InstallerClass.Designer.cs">
+      <DependentUpon>InstallerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageConstant.cs" />
+    <Compile Include="Messages\ErrorMessage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AppUtils\AppUtils.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="View\AutoUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AutoUpdateForm.Designer.cs">
+      <DependentUpon>AutoUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Beneficiary\BeneficiaryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Beneficiary\BeneficiaryListForm.Designer.cs">
+      <DependentUpon>BeneficiaryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExportDbForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExportDbForm.Designer.cs">
+      <DependentUpon>ExportDbForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportDbForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportDbForm.Designer.cs">
+      <DependentUpon>ImportDbForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\NidSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\NidSearchForm.Designer.cs">
+      <DependentUpon>NidSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\ChooseDBToMatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\ChooseDBToMatchForm.Designer.cs">
+      <DependentUpon>ChooseDBToMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\FingerprintCaptureDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\FingerprintCaptureDialogForm.Designer.cs">
+      <DependentUpon>FingerprintCaptureDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\ImageCaptureDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\ImageCaptureDialogForm.Designer.cs">
+      <DependentUpon>ImageCaptureDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\IrisCaptureDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\IrisCaptureDialogForm.Designer.cs">
+      <DependentUpon>IrisCaptureDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddRecoveryDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddRecoveryDialogForm.Designer.cs">
+      <DependentUpon>AddRecoveryDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryBiometricUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryBiometricUserControl.Designer.cs">
+      <DependentUpon>NotEntryBiometricUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryFailedUploadUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryFailedUploadUserControl.Designer.cs">
+      <DependentUpon>NotEntryFailedUploadUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryPreviewForm.Designer.cs">
+      <DependentUpon>NotEntryPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntrySubmitPreviewUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntrySubmitPreviewUserControl.Designer.cs">
+      <DependentUpon>NotEntrySubmitPreviewUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryUploadPendingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryUploadPendingUserControl.Designer.cs">
+      <DependentUpon>NotEntryUploadPendingUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\NotEntryUserControl.Designer.cs">
+      <DependentUpon>NotEntryUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\SearchNotEntryProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\NotEntry\SearchNotEntryProfileUserControl.Designer.cs">
+      <DependentUpon>SearchNotEntryProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\OtherInfoDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\OtherInfoDialogForm.Designer.cs">
+      <DependentUpon>OtherInfoDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\RecoveryDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\RecoveryDialogForm.Designer.cs">
+      <DependentUpon>RecoveryDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\DraftSpecialProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\DraftSpecialProfileUserControl.Designer.cs">
+      <DependentUpon>DraftSpecialProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\FailedUploadSpecialProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\FailedUploadSpecialProfileUserControl.Designer.cs">
+      <DependentUpon>FailedUploadSpecialProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SearchSpecialProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SearchSpecialProfileUserControl.Designer.cs">
+      <DependentUpon>SearchSpecialProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialEnrollCountUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialEnrollCountUserControl.Designer.cs">
+      <DependentUpon>SpecialEnrollCountUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialEnrollmentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialEnrollmentUserControl.Designer.cs">
+      <DependentUpon>SpecialEnrollmentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialProfilePreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\SpecialProfilePreviewForm.Designer.cs">
+      <DependentUpon>SpecialProfilePreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\UploadPendingSpecialUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\Special\UploadPendingSpecialUserControl.Designer.cs">
+      <DependentUpon>UploadPendingSpecialUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\DraftDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\DraftDataUserControl.Designer.cs">
+      <DependentUpon>DraftDataUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\EnrolledTodayUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\EnrolledTodayUserControl.Designer.cs">
+      <DependentUpon>EnrolledTodayUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\FailedUploadUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\FailedUploadUserControl.Designer.cs">
+      <DependentUpon>FailedUploadUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\JailDbMatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\JailDbMatchForm.Designer.cs">
+      <DependentUpon>JailDbMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\MatchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\MatchResultForm.Designer.cs">
+      <DependentUpon>MatchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\GeneralProfilePreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\GeneralProfilePreviewForm.Designer.cs">
+      <DependentUpon>GeneralProfilePreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\Report\ReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\Report\ReportUserControl.Designer.cs">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\UploadPendingListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\UploadPendingListUserControl.Designer.cs">
+      <DependentUpon>UploadPendingListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\UserActivationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\UserActivationForm.Designer.cs">
+      <DependentUpon>UserActivationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\ProfileManagement\ProfileManagementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\ProfileManagement\ProfileManagementUserControl.Designer.cs">
+      <DependentUpon>ProfileManagementUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Old\MatchUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Old\MatchUserControl.Designer.cs">
+      <DependentUpon>MatchUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Old\ManageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Old\ManageUserControl.Designer.cs">
+      <DependentUpon>ManageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DefaultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DefaultUserControl.Designer.cs">
+      <DependentUpon>DefaultUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Old\EnrollUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Old\EnrollUserControl.Designer.cs">
+      <DependentUpon>EnrollUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ErrorMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ErrorMessageBox.Designer.cs">
+      <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\BiometricSearchUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\BiometricSearchUserControl.Designer.cs">
+      <DependentUpon>BiometricSearchUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\BiometricUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\BiometricInformation\BiometricUserControl.Designer.cs">
+      <DependentUpon>BiometricUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddEducationDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddEducationDialogForm.Designer.cs">
+      <DependentUpon>AddEducationDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddNickNameDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\AddNickNameDialogForm.Designer.cs">
+      <DependentUpon>AddNickNameDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\DiagnoseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\DiagnoseUserControl.Designer.cs">
+      <DependentUpon>DiagnoseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\CriminalProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\CriminalProfile\CriminalProfileUserControl.Designer.cs">
+      <DependentUpon>CriminalProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\OtherInformationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\OtherInformationUserControl.Designer.cs">
+      <DependentUpon>OtherInformationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Enrollment\PreviewAndSubmitUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Enrollment\PreviewAndSubmitUserControl.Designer.cs">
+      <DependentUpon>PreviewAndSubmitUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\Report\DailyEnrollmentReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\Report\DailyEnrollmentReportUserControl.Designer.cs">
+      <DependentUpon>DailyEnrollmentReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\Report\SummaryReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\Report\SummaryReportUserControl.Designer.cs">
+      <DependentUpon>SummaryReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\SearchCriminalUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\SearchCriminalUserControl.Designer.cs">
+      <DependentUpon>SearchCriminalUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\Setup\BattalionSettingsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\Setup\BattalionSettingsUserControl.Designer.cs">
+      <DependentUpon>BattalionSettingsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\Setup\ServiceSettingsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\Setup\ServiceSettingsUserControl.Designer.cs">
+      <DependentUpon>ServiceSettingsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New\Home\UserManagementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\New\Home\UserManagementUserControl.Designer.cs">
+      <DependentUpon>UserManagementUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Old\PersonMatchDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Old\PersonMatchDialogForm.Designer.cs">
+      <DependentUpon>PersonMatchDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Old\PersonMatchResultForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Old\PersonMatchResultForm.Designer.cs">
+      <DependentUpon>PersonMatchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProcessingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProcessingDialog.Designer.cs">
+      <DependentUpon>ProcessingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InfoMessageBox.Designer.cs">
+      <DependentUpon>InfoMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\YesNoMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\YesNoMessageBox.Designer.cs">
+      <DependentUpon>YesNoMessageBox.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AutoUpdateForm.resx">
+      <DependentUpon>AutoUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Beneficiary\BeneficiaryListForm.resx">
+      <DependentUpon>BeneficiaryListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExportDbForm.resx">
+      <DependentUpon>ExportDbForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportDbForm.resx">
+      <DependentUpon>ImportDbForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\NidSearchForm.resx">
+      <DependentUpon>NidSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\ChooseDBToMatchForm.resx">
+      <DependentUpon>ChooseDBToMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\FingerprintCaptureDialogForm.resx">
+      <DependentUpon>FingerprintCaptureDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\ImageCaptureDialogForm.resx">
+      <DependentUpon>ImageCaptureDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\IrisCaptureDialogForm.resx">
+      <DependentUpon>IrisCaptureDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\CriminalProfile\AddEducationDialogForm.resx">
+      <DependentUpon>AddEducationDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\CriminalProfile\AddNickNameDialogForm.resx">
+      <DependentUpon>AddNickNameDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\CriminalProfile\AddRecoveryDialogForm.resx">
+      <DependentUpon>AddRecoveryDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntryBiometricUserControl.resx">
+      <DependentUpon>NotEntryBiometricUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntryFailedUploadUserControl.resx">
+      <DependentUpon>NotEntryFailedUploadUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntryPreviewForm.resx">
+      <DependentUpon>NotEntryPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntrySubmitPreviewUserControl.resx">
+      <DependentUpon>NotEntrySubmitPreviewUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntryUploadPendingUserControl.resx">
+      <DependentUpon>NotEntryUploadPendingUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\NotEntryUserControl.resx">
+      <DependentUpon>NotEntryUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\NotEntry\SearchNotEntryProfileUserControl.resx">
+      <DependentUpon>SearchNotEntryProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\OtherInfoDialogForm.resx">
+      <DependentUpon>OtherInfoDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\RecoveryDialogForm.resx">
+      <DependentUpon>RecoveryDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\DraftSpecialProfileUserControl.resx">
+      <DependentUpon>DraftSpecialProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\FailedUploadSpecialProfileUserControl.resx">
+      <DependentUpon>FailedUploadSpecialProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\SearchSpecialProfileUserControl.resx">
+      <DependentUpon>SearchSpecialProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\SpecialEnrollCountUserControl.resx">
+      <DependentUpon>SpecialEnrollCountUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\SpecialEnrollmentUserControl.resx">
+      <DependentUpon>SpecialEnrollmentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\SpecialProfilePreviewForm.resx">
+      <DependentUpon>SpecialProfilePreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\Special\UploadPendingSpecialUserControl.resx">
+      <DependentUpon>UploadPendingSpecialUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\DraftDataUserControl.resx">
+      <DependentUpon>DraftDataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\EnrolledTodayUserControl.resx">
+      <DependentUpon>EnrolledTodayUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\FailedUploadUserControl.resx">
+      <DependentUpon>FailedUploadUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\JailDbMatchForm.resx">
+      <DependentUpon>JailDbMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\MatchResultForm.resx">
+      <DependentUpon>MatchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\GeneralProfilePreviewForm.resx">
+      <DependentUpon>GeneralProfilePreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\Report\ReportUserControl.resx">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\UploadPendingListUserControl.resx">
+      <DependentUpon>UploadPendingListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\UserActivationForm.resx">
+      <DependentUpon>UserActivationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\ProfileManagement\ProfileManagementUserControl.resx">
+      <DependentUpon>ProfileManagementUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Old\MatchUserControl.resx">
+      <DependentUpon>MatchUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Old\ManageUserControl.resx">
+      <DependentUpon>ManageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DefaultUserControl.resx">
+      <DependentUpon>DefaultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Old\EnrollUserControl.resx">
+      <DependentUpon>EnrollUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorMessageBox.resx">
+      <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\BiometricSearchUserControl.resx">
+      <DependentUpon>BiometricSearchUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\BiometricInformation\BiometricUserControl.resx">
+      <DependentUpon>BiometricUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\CriminalProfile\CriminalProfileUserControl.resx">
+      <DependentUpon>CriminalProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\DiagnoseUserControl.resx">
+      <DependentUpon>DiagnoseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\OtherInformationUserControl.resx">
+      <DependentUpon>OtherInformationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Enrollment\PreviewAndSubmitUserControl.resx">
+      <DependentUpon>PreviewAndSubmitUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\Report\DailyEnrollmentReportUserControl.resx">
+      <DependentUpon>DailyEnrollmentReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\Report\SummaryReportUserControl.resx">
+      <DependentUpon>SummaryReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\SearchCriminalUserControl.resx">
+      <DependentUpon>SearchCriminalUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\Setup\BattalionSettingsUserControl.resx">
+      <DependentUpon>BattalionSettingsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\Setup\ServiceSettingsUserControl.resx">
+      <DependentUpon>ServiceSettingsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New\Home\UserManagementUserControl.resx">
+      <DependentUpon>UserManagementUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Old\PersonMatchDialogForm.resx">
+      <DependentUpon>PersonMatchDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Old\PersonMatchResultForm.resx">
+      <DependentUpon>PersonMatchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProcessingDialog.resx">
+      <DependentUpon>ProcessingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InfoMessageBox.resx">
+      <DependentUpon>InfoMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\YesNoMessageBox.resx">
+      <DependentUpon>YesNoMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Font\Shonar.ttf" />
+    <None Include="Font\Shonarb.ttf" />
+    <None Include="migscript.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ISTL.COMMON\ISTL.COMMON.csproj">
+      <Project>{7e1faced-9ac2-4745-887b-4ff10bdb7570}</Project>
+      <Name>ISTL.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISTL.DOMAINMODEL\ISTL.MODELS.csproj">
+      <Project>{38CAF6C0-0FFA-42FB-BDB5-F5637A1B8B03}</Project>
+      <Name>ISTL.MODELS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISTL.FP\ISTL.FP.csproj">
+      <Project>{b1091b86-2795-4871-8f54-bd9388fd56e5}</Project>
+      <Name>ISTL.FP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISTL.IRIS\ISTL.IRIS.csproj">
+      <Project>{3e725190-1319-4f99-8f92-bedac32c10fa}</Project>
+      <Name>ISTL.IRIS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISTL.WEBCAM\ISTL.WEBCAM.csproj">
+      <Project>{9e7c5357-e278-40b8-be2c-809fe33994f4}</Project>
+      <Name>ISTL.WEBCAM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fpengine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\cmtfinger.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\fep-cmt-legacy-1-0-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\fep-cmtS-3-0-0.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\FingerprintDll.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\FTRAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\ftrScanAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\ftrSDKHelper13.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LS1394.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LScanEssentials.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LScanEssentialsBioBase.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LS_USB_Stub.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LS_USB_Stub_100.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\LS_USB_Stub_Us.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\opencv_core241.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\opencv_highgui241.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\opencv_imgproc241.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\QtCore4.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\QtGui4.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\QtXml4.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\tbb.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Fingerprint\Wsqm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\BBA_iscan.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\BioBaseDotNet.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\cmtiris.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\CmtIrisDotNet.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\cmt_iris_sdk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\IriMagic4Net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\IriMagicBino.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\jawt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Iris\libCMQ.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\SQLite\SQLite.Interop.dll" />
+    <Content Include="Library\Webcam\AForge.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\AForge.Video.DirectShow.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\AForge.Video.DirectShow.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\AForge.Video.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\AForge.Video.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\AForge.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SNSOP_Logo.ico" />
+    <None Include="Resources\arrow.gif" />
+    <Content Include="Library\Webcam\concrt140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\cvextern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\haarcascade_frontalface_alt_tree.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\License-LGPL.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\msvcp140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\msvcp140_1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\msvcp140_2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\msvcp140_codecvt_ids.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\opencv_videoio_ffmpeg451.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Webcam\vcruntime140.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rab.ico" />
+    <Content Include="Resources\bg1.png" />
+    <None Include="Resources\bottom-notice1.png" />
+    <Content Include="Resources\bottom.png" />
+    <Content Include="Resources\button_panel.png" />
+    <Content Include="Resources\b_accept.png" />
+    <Content Include="Resources\b_cancel.png" />
+    <Content Include="Resources\b_cancel1.png" />
+    <Content Include="Resources\b_cancel_disabled.png" />
+    <Content Include="Resources\b_close.png" />
+    <None Include="Resources\b_device_error_details.png" />
+    <Content Include="Resources\b_done.png" />
+    <Content Include="Resources\b_done_tick.png" />
+    <Content Include="Resources\b_edit_pencil.png" />
+    <Content Include="Resources\b_exit.png" />
+    <None Include="Resources\b_exit_top.png" />
+    <None Include="Resources\b_fetch.png" />
+    <Content Include="Resources\b_import.png" />
+    <None Include="Resources\b_print.png" />
+    <Content Include="Resources\b_save.png" />
+    <Content Include="Resources\b_save1.png" />
+    <Content Include="Resources\b_save_disabled.png" />
+    <Content Include="Resources\b_update.png" />
+    <Content Include="Resources\b_update_available.gif" />
+    <Content Include="Resources\b_update_disabled.png" />
+    <Content Include="Resources\checking_device_icon.png" />
+    <Content Include="Resources\device_notok_icon.png" />
+    <Content Include="Resources\device_ok_icon.png" />
+    <None Include="Resources\fpscanner_fail.png" />
+    <None Include="Resources\fpscanner_ok.png" />
+    <None Include="Resources\dummy_image.png" />
+    <None Include="Resources\exit-w.png" />
+    <None Include="Resources\icon-login.png" />
+    <None Include="Resources\download.gif" />
+    <None Include="Resources\download-disable.png" />
+    <None Include="Resources\export_screen_icon.png" />
+    <Content Include="Resources\import_export_bg.png" />
+    <Content Include="Resources\import_screen_icon.png" />
+    <Content Include="Resources\left_bevel.png" />
+    <Content Include="Resources\loader b.gif" />
+    <None Include="Resources\loader b1.gif" />
+    <Content Include="Resources\loader%282%29.gif" />
+    <Content Include="Resources\loader.gif" />
+    <None Include="Resources\logo75.png" />
+    <None Include="Resources\logoTransparent.png" />
+    <None Include="Resources\l_thumb_blue.gif" />
+    <None Include="Resources\l_index_blue.gif" />
+    <None Include="Resources\l_middle_blue.gif" />
+    <None Include="Resources\l_ring_blue.gif" />
+    <None Include="Resources\l_small_blue.gif" />
+    <None Include="Resources\lod.gif" />
+    <None Include="Resources\l_index_green.gif" />
+    <None Include="Resources\l_index_orange.gif" />
+    <None Include="Resources\l_index_red.gif" />
+    <None Include="Resources\l_middle_green.gif" />
+    <None Include="Resources\l_middle_orange.gif" />
+    <None Include="Resources\l_middle_red.gif" />
+    <None Include="Resources\l_ring_green.gif" />
+    <None Include="Resources\l_ring_orange.gif" />
+    <None Include="Resources\l_ring_red.gif" />
+    <None Include="Resources\l_small_green.gif" />
+    <None Include="Resources\l_small_orange.gif" />
+    <None Include="Resources\l_small_red.gif" />
+    <None Include="Resources\l_thumb_green.gif" />
+    <None Include="Resources\l_thumb_orange.gif" />
+    <None Include="Resources\l_thumb_red.gif" />
+    <Content Include="Resources\printer_failed.png" />
+    <Content Include="Resources\printer_ok.png" />
+    <Content Include="Resources\printer_ok1.png" />
+    <Content Include="Resources\print_error.png" />
+    <Content Include="Resources\print_ok.png" />
+    <None Include="Resources\statusbar.png" />
+    <None Include="Resources\signature_fail.png" />
+    <None Include="Resources\signature_ok.png" />
+    <None Include="Resources\r_thumb_blue.gif" />
+    <None Include="Resources\r_index_blue.gif" />
+    <None Include="Resources\r_middle_blue.gif" />
+    <None Include="Resources\r_ring_blue.gif" />
+    <None Include="Resources\r_small_blue.gif" />
+    <None Include="Resources\r_thumb_red.gif" />
+    <None Include="Resources\r_index_green.gif" />
+    <None Include="Resources\r_index_orange.gif" />
+    <None Include="Resources\r_index_red.gif" />
+    <None Include="Resources\r_middle_green.gif" />
+    <None Include="Resources\r_middle_orange.gif" />
+    <None Include="Resources\r_middle_red.gif" />
+    <None Include="Resources\r_ring_green.gif" />
+    <None Include="Resources\r_ring_orange.gif" />
+    <None Include="Resources\r_ring_red.gif" />
+    <None Include="Resources\r_small_green.gif" />
+    <None Include="Resources\r_small_orange.gif" />
+    <None Include="Resources\r_small_red.gif" />
+    <None Include="Resources\r_thumb_green.gif" />
+    <None Include="Resources\r_thumb_orange.gif" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\st_network_offline.png" />
+    <Content Include="Resources\st_network_online.png" />
+    <Content Include="Resources\st_uploading.png" />
+    <Content Include="Resources\st_uploading_stopped.png" />
+    <None Include="Resources\user_icon.png" />
+    <None Include="Resources\webcam_fail.png" />
+    <None Include="Resources\top-notice1.png" />
+    <None Include="Resources\top-notice2.png" />
+    <None Include="Resources\tick.jpg" />
+    <None Include="Resources\user-f.png" />
+    <None Include="Resources\user-m.png" />
+    <Content Include="Resources\white_bg.png" />
+    <None Include="Resources\white_bg1.png" />
+    <Content Include="Resources\white_bg_split.png" />
+    <Content Include="Resources\white_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
